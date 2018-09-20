@@ -56,17 +56,7 @@
 			</i>
 			</a>
 			<div class="menu-main-menu-container">
-				<ul id="mobile_main_menu" class="mobile_main_nav">
-					<li id="menu-item-3478" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3478">
-						<a href="http://www.flygoldfinch.com/handcrafted-tours">Handcrafted Tours</a>
-					</li>
-					<li id="menu-item-3076" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3076">
-						<a href="http://www.flygoldfinch.com/honeymooners-paradise">Honeymooner’s Paradise</a>
-					</li>
-					<li id="menu-item-3477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3477">
-						<a href="http://www.flygoldfinch.com/signature-holidays/">Signature holidays</a>
-					</li>
-				</ul>
+				<ul id="mobile_main_menu" class="mobile_main_nav"></ul>
 			</div>
 		</div>
 		<!-- End mobile menu -->
@@ -106,23 +96,7 @@
 							<div class="nav_wrapper_inner">
 								<div id="menu_border_wrapper" style="display: block;">
 									<div class="menu-main-menu-container">
-										<ul id="main_menu" class="nav">
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3478">
-												<a href="http://www.flygoldfinch.com/handcrafted-tours">
-												<span>Handcrafted Tours</span>
-												</a>
-											</li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3076">
-												<a href="http://www.flygoldfinch.com/honeymooners-paradise">
-												<span>Honeymooner’s Paradise</span>
-												</a>
-											</li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3477">
-												<a href="http://www.flygoldfinch.com/signature-holidays/">
-												<span>Signature holidays</span>
-												</a>
-											</li>
-										</ul>
+										<ul id="main_menu" class="nav"></ul>
 									</div>
 								</div>
 							</div>
@@ -417,19 +391,21 @@
 		<script type="text/javascript" src="./assets/js/wp-embed.min.js"></script>
 		<script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
 		<script>
+			$('#main_menu.nav').load('assets/htmls/menus.html');
+			$('#mobile_main_menu.mobile_main_nav').load('assets/htmls/m-menus.html');
+			
+			$(document).on('click', '#contact_submit_btn',function () {
 
-				$(document).on('click', '#contact_submit_btn',function () {
+				var yourName = $('#your_name').val();
+				var email = $('#email').val();
+				var subject = "Kinldy Accept our Policies.";
+				var verifyLink = "https://policies.flygoldfinch.com/verify.html?e="+email+"&n="+yourName;
 
-					var yourName = $('#your_name').val();
-					var email = $('#email').val();
-					var subject = "Kinldy Accept our Policies.";
-					var verifyLink = "https://policies.flygoldfinch.com/verify.html?e="+email+"&n="+yourName;
+				var emailTemp = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>FlyGoldfinch</title> </head> <body style="margin:0px; background: #f8f8f8; "> <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%; width: 100%; color: #514d6a;"> <div style="max-width: 700px; padding:50px 0; margin: 0px auto; font-size: 14px"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 20px"> <tbody> <tr> <td style="vertical-align: top; padding-bottom:30px;" align="center"><a href="`+verifyLink+`" target="_blank"><img src="https://flygoldfinch.github.io/assets/images/fgf_c_logo.png" width="100" alt="Fly Goldfinch" style="border:none"></a> </td> </tr> </tbody> </table> <div style="padding: 20px; background: #fff;"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"> <tbody> <tr> <td> <b>Dear `+yourName+`,</b> <p>This is to inform you that, we are sending a link to you by clicking this you accept our T&C.</p> <a href="javascript: void(0);" style="display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #1e88e5; border-radius: 60px; text-decoration:none;"> I Accept</a> <br /> <!-- <p>Checkout our <a href="">T&C</a></p> --> <b>- Thanks (Fly Goldfinch)</b> </td> </tr> </tbody> </table> </div> <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px"> <p> Powered by flygoldfinch.com <br> <a href="javascript: void(0);" style="color: #b2b2b5; text-decoration: underline;">Unsubscribe</a> </p> </div> </div> </div> </body> </html>`;
 
-					var emailTemp = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>FlyGoldfinch</title> </head> <body style="margin:0px; background: #f8f8f8; "> <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%; width: 100%; color: #514d6a;"> <div style="max-width: 700px; padding:50px 0; margin: 0px auto; font-size: 14px"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 20px"> <tbody> <tr> <td style="vertical-align: top; padding-bottom:30px;" align="center"><a href="`+verifyLink+`" target="_blank"><img src="https://flygoldfinch.github.io/assets/images/fgf_c_logo.png" width="100" alt="Fly Goldfinch" style="border:none"></a> </td> </tr> </tbody> </table> <div style="padding: 20px; background: #fff;"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"> <tbody> <tr> <td> <b>Dear `+yourName+`,</b> <p>This is to inform you that, we are sending a link to you by clicking this you accept our T&C.</p> <a href="javascript: void(0);" style="display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #1e88e5; border-radius: 60px; text-decoration:none;"> I Accept</a> <br /> <!-- <p>Checkout our <a href="">T&C</a></p> --> <b>- Thanks (Fly Goldfinch)</b> </td> </tr> </tbody> </table> </div> <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px"> <p> Powered by flygoldfinch.com <br> <a href="javascript: void(0);" style="color: #b2b2b5; text-decoration: underline;">Unsubscribe</a> </p> </div> </div> </div> </body> </html>`;
-
-					Email.sendWithAttachment("noreply@flygoldfinch.com", email, subject, emailTemp, {token: "0372d3bd-6cd8-4e2a-835a-54b8e64c2ad5"},
-					"","", "https://policies.flygoldfinch.com/documents/policies.pdf");
-				});
+				Email.sendWithAttachment("noreply@flygoldfinch.com", email, subject, emailTemp, {token: "0372d3bd-6cd8-4e2a-835a-54b8e64c2ad5"},
+				"","", "https://policies.flygoldfinch.com/documents/policies.pdf");
+			});
 		</script>
 	</body>
 </html>
