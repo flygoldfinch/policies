@@ -1,0 +1,1 @@
+MfeSecure.load({"trustmark":{"position_x":"right","position_y":"bottom","offset_x":0,"pro":1,"enabled":1},"host":"flygoldfinch.com","siteId":5724972,"platform":"wordpress"});
