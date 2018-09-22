@@ -1,5 +1,36 @@
 jQuery(document).ready(function(){ 
 	"use strict";
+	
+	window.gvar = {
+		config: null,
+		configFailed: function () {
+			
+		},
+	}
+
+	myLoadConfig();
+
+	function myLoadConfig(count = 1) {
+		if (count > 5) {
+			gvar.configFailed();
+			return false;
+		}
+
+		$.ajax({
+			url: '/assets/files/config.json',
+			type:'get',
+			dataType : 'json',
+			contentType: "application/json",
+		  success: function(json){
+				gvar['config'] = json;
+				$('#pbwrapper').addClass('hide');
+		  },
+		  error:function () {
+		  	myLoadConfig(++count);
+		  }
+		});
+
+	}
 
 	var calScreenWidth = jQuery(window).width();
 	
@@ -915,7 +946,7 @@ jQuery(window).load(function(){
 });
 		
 jQuery(window).resize(function(){
-    var calScreenWidth = jQuery(window).width();
+  var calScreenWidth = jQuery(window).width();
 	
 	var contentMarginTop = parseInt(jQuery('#page_caption.hasbg').height())+parseInt(jQuery('#page_caption.hasbg').css('paddingTop'));
 		
