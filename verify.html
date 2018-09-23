@@ -4,7 +4,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>FlyGoldfinch</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    </head>
    <body style="margin:0px; background: #f8f8f8; ">
       <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%;  width: 100%; color: #514d6a;">
@@ -47,19 +47,51 @@
                </table>
             </div>
             <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px">
-               <p> Powered by flygoldfinch.com <br>
-                  <a href="javascript: void(0);" style="color: #b2b2b5; text-decoration: underline;">Unsubscribe</a> 
-               </p>
+               <p> Powered by flygoldfinch.com <br></p>
             </div>
          </div>
       </div>
+      <script type="text/javascript" src="./assets/js/custom-config.js"></script>
+
       <script>
+         $(document).ready(function () {
+            gvar.configSuccess =  function () {
+
+               var email = getQueryString('e');
+               var name = getQueryString('n');
+               var subject = "Thanks you for accepting our policies.";
+
+               var emailTemp = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>FlyGoldfinch</title> </head> <body style="margin:0px; background: #f8f8f8; "> <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%; width: 100%; color: #514d6a;"> <div style="max-width: 700px; padding:50px 0; margin: 0px auto; font-size: 14px"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 20px"> <tbody> <tr> <td style="vertical-align: top; padding-bottom:30px;" align="center"> <a href="javascript:void(0)"> <img src="https://flygoldfinch.github.io/assets/images/fgf_c_logo.png" width="100" alt="Fly Goldfinch" style="border:none"> </a> </td> </tr> </tbody> </table> <div style="padding: 20px; background: #fff;"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"> <tbody> <tr> <td> <b>Dear `+name+`,</b> <p>Thank you for accepting our Policies (T&C)</p> <p>We have attached a some documents please have a look.</p> <a href="//policies.flygoldfinch.com" > Read more</a> <br /> <!-- <p>Checkout our <a href="">T&C</a></p> --> <b>- Thanks (Fly Goldfinch)</b> </td> </tr> </tbody> </table> </div> <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px"> <p> Powered by flygoldfinch.com <br></p> </div> </div> </div> </body> </html>`;
+
+               $.ajax({
+                  url:gvar.config.mail.api_url,
+                  type : 'post',
+                  dataType : 'json',
+                  data : {
+                     token : gvar.config.mail.mail_token,
+                     to : email,
+                     cc : 'flygoldfinch@gmail.com',
+                     body : emailTemp,
+                     subject : subject,
+                     attachments : [
+                        'https://policies.flygoldfinch.com/assets/documents/policies.pdf'
+                     ]
+                  },
+
+                  success : function (data) {
+                     // window.location.href = 'https://policies.flygoldfinch.com'
+                  }
+               })
+            }
+         });
+
          var getQueryString = function ( field, url ) {
             var href = url ? url : window.location.href;
             var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
             var string = reg.exec(href);
-            return string ? string[1] : null;
+            return string ? decodeURIComponent(string[1]) : null;
          };
+         
       </script>
    </body>
 </html>
