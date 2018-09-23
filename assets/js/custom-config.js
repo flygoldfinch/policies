@@ -8,6 +8,10 @@ $(document).ready(function () {
 		configFailed: function () {
 			
 		},
+		configFileUrl: function () {
+			return ['test', 'local', 'com'].includes(window.location.host.split('.').pop())
+					 ? 'config-dev.json' : 'config.json';
+		}
 
 	}
 
@@ -20,7 +24,7 @@ $(document).ready(function () {
 		}
 
 		$.ajax({
-			url: '/assets/files/config.json',
+			url: '/assets/files/'+gvar.configFileUrl(),
 			type:'get',
 			dataType : 'json',
 			contentType: "application/json",

@@ -1,0 +1,6 @@
+{
+	"mail" : {
+		"api_url": "//mailapi.trawish.test/v1/mail/send",
+		"mail_token": "Z4WR1qJ6PmN9a73fe1Rva7W3ZMTaDFkg"
+	}
+}
