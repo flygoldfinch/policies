@@ -9,7 +9,7 @@ $(document).ready(function () {
 			
 		},
 		configFileUrl: function () {
-			return ['test', 'local', 'com'].includes(window.location.host.split('.').pop())
+			return ['test', 'local'].includes(window.location.host.split('.').pop())
 					 ? 'config-dev.json' : 'config.json';
 		}
 
