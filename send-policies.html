@@ -31,97 +31,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 		<link rel="stylesheet" id="custom_css-css" href="./assets/css/custom.css" type="text/css" media="all">
 		<link rel="stylesheet" id="responsive-css" href="./assets/css/grid.css" type="text/css" media="all">
-		<style type="text/css">
-			#fgfpreloader {
-			  top: 200px;
-			  left: 41.5%;
-			  font-size: 5px;
-			  position: relative;
-			  text-indent: -9999em;
-			  border-top: 1.1em solid rgba(255,255,128, 0.2);
-			  border-right: 1.1em solid rgba(255,255,128, 0.2);
-			  border-bottom: 1.1em solid rgba(255,255,128, 0.2);
-			  border-left: 1.1em solid #FFD700;
-			  z-index: 100;
-			  -webkit-transform: translateZ(0);
-			  -ms-transform: translateZ(0);
-			  transform: translateZ(0);
-			  -webkit-animation: load8 1.1s infinite linear;
-			  animation: load8 1.1s infinite linear;
-			}
-			#fgfpreloader,
-			#fgfpreloader:after {
-			  border-radius: 50%;
-			  width: 210px;
-			  height: 210px;
-			}
-			@-webkit-keyframes load8 {
-			  0% {
-				-webkit-transform: rotate(0deg);
-				transform: rotate(0deg);
-			  }
-			  100% {
-				-webkit-transform: rotate(360deg);
-				transform: rotate(360deg);
-			  }
-			}
-			@keyframes load8 {
-			  0% {
-				-webkit-transform: rotate(0deg);
-				transform: rotate(0deg);
-			  }
-			  100% {
-				-webkit-transform: rotate(360deg);
-				transform: rotate(360deg);
-			  }
-			}
-
-			#fgflogopreload{
-				z-index: 50;
-				top: 220px;
-				position: absolute;
-				margin: 0 0 0 42.8%;
-				width: 100px;
-				height: 100px;
-			}
-			#pbwrapper{
-				width: 100%; 
-				position: fixed; 
-				left:0; 
-				top: 0; 
-				opacity:1; 
-				height: 100%; 
-				text-align: center; 
-				z-index: 9999; 
-				background-color : #fff;
-			}
-			@media only screen and (max-device-width: 480px) {
-				#pbwrapper{
-					width: 100%; 
-					position: fixed; 
-					left:0; 
-					top: 0; 
-					opacity:1; 
-					height: 100%; 
-					text-align: center; 
-					z-index: 10; 
-					background-color : #fff;
-				}
-				
-				#fgflogopreload {
-					z-index: 50;
-					top: 220px;
-					position: absolute;
-					margin: 0px 0 0 24.8%;
-					width: 100px;
-					height: 100px;
-				}
-				
-				#fgfpreloader {
-					left: 20.5%;
-				}
-			}
-		</style>
 		<!-- <script type="text/javascript" src="./assets/js/jquery.js"></script> -->
 		<script type="text/javascript" src="./assets/js/jquery-2.2.4.min.js"></script>
 		<script type="text/javascript" src="./assets/js/jquery-migrate.min.js"></script>
@@ -230,7 +139,7 @@
 									<textarea id="message" name="message" rows="3" cols="10" class="required_field" style="width:96%"></textarea> -->
 									<br>
 									<p>
-										<input id="contact_submit_btn" type="submit" value="Submit Form">
+										<input id="contact_submit_btn" type="submit" value="Send Policy">
 									</p>
 								</div>
 							</div>
@@ -242,7 +151,6 @@
 			<br>
 		</div>
 		<div class="footer_bar ">
-			<style type="text/css"> .div-tour-partner{width: 10%; } .img-tour-partner{cursor: pointer; width: 100%; -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */ filter: grayscale(100%); } .img-tour-partner:hover{-webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */ filter: grayscale(0%); } </style>
 			<div style="display:flex; padding:15px 0px 10px 0px;">
 				<div class="div-tour-partner">
 					<!-- <a href="http://www.tourism.gov.my/en/in" target="_blank"> -->
@@ -301,7 +209,6 @@
 				</div>
 			</div>
 			<div id="footer" class="">
-				<style type="text/css"> .title_h2{color: #fff; } .footer_container{color: #fff; background-color: #000; } #sitemap_tag{list-style: none; -webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: -10px; -webkit-margin-end: 0px; -webkit-padding-start: 0px; } #sitemap_tag li{display: inline; padding: 0 10px; border-left: solid 1px black; } #sitemap_tag li:first-child{border-left: none; } </style>
 				<div class="footer_container">
 					<div style="display:flex;">
 						<div style="width:55%; margin:0 3% 0 1%;">
@@ -439,10 +346,10 @@
 
 				var yourName = $('#your_name').val();
 				var email = $('#email').val();
-				var subject = "Kinldy Accept our Policies.";
+				var subject = "Kindly Accept our Policies.";
 				var verifyLink = window.location.origin+"/verify.html?e="+email+"&n="+yourName;
 
-				var emailTemp = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>FlyGoldfinch</title> </head> <body style="margin:0px; background: #f8f8f8; "> <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%; width: 100%; color: #514d6a;"> <div style="max-width: 700px; padding:50px 0; margin: 0px auto; font-size: 14px"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 20px"> <tbody> <tr> <td style="vertical-align: top; padding-bottom:30px;" align="center"><a href="http://www.flygoldfinch.com" target="_blank"><img src="https://flygoldfinch.github.io/assets/images/fgf_c_logo.png" width="100" alt="Fly Goldfinch" style="border:none"></a> </td> </tr> </tbody> </table> <div style="padding: 20px; background: #fff;"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"> <tbody> <tr> <td> <b>Dear `+yourName+`,</b> <p>This is to inform you that, we are sending a link to you by clicking this you accept our T&C.</p> <a href="`+verifyLink+`" style="display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #1e88e5; border-radius: 60px; text-decoration:none;"> I Accept</a> <br /> <!-- <p>Checkout our <a href="">T&C</a></p> --> <b>Thanks (Fly Goldfinch)</b> </td> </tr> </tbody> </table> </div> <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px"> <p> Powered by flygoldfinch.com <br> <a href="javascript: void(0);" style="color: #b2b2b5; text-decoration: underline;">Unsubscribe</a> </p> </div> </div> </div> </body> </html>`;
+				var emailTemp = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>FlyGoldfinch</title> </head> <body style="margin:0px; background: #f8f8f8; "> <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%; width: 100%; color: #514d6a;"> <div style="max-width: 700px; padding:50px 0; margin: 0px auto; font-size: 14px"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 20px"> <tbody> <tr> <td style="vertical-align: top; padding-bottom:30px;" align="center"><a href="http://www.flygoldfinch.com" target="_blank"><img src="https://flygoldfinch.github.io/assets/images/fgf_c_logo.png" width="100" alt="Fly Goldfinch" style="border:none"></a> </td> </tr> </tbody> </table> <div style="padding: 20px; background: #fff;"> <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;"> <tbody> <tr> <td> <b>Dear `+yourName+`,</b> <p>This is to inform you that, we have policy. Kindly read.</p> <p><h3 style="text-align: center;">Policy</h3></p> <p> <ul> <li>We only apply visa on behalf of the clients. Outcome of the visa is at discretion of the embassy and we have no role in that </li> <li>In-case visa is denied cancellation rules will apply </li> <li>In-Case of a cruise itinerary of Genting Dreams or Superstar Cruise liners, a compulsory gratuity of 21SGD per pax per day or Equivalent needs to be paid directly </li> <li>If the itinerary if for Dubai, Malaysia, European City then City tax amounting to 3 to 10 USD per day needs to be paid at the resort or Hotel directly and may change on discretion of the city and the hotel </li> <li>In-Case of Self drive itinerary : Credit card in the name of main renter is compulsory. In-case renter fails to produce a valid credit card or Driving License, he or she shall be denied the rental car and we shall not be liable for any refunds </li> <li>In-case of self drive itinerary : Fuel and Parking needs to be paid by the renter </li> <li>In-case of self drive itinerary : Security needs to be paid by renter which is refundable once they return the car to the rental company as per their terms and conditions </li> <li>Security deposit is compulsory at all international hotels </li> </ul> </p> <a href="`+verifyLink+`" style="display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #1e88e5; border-radius: 60px; text-decoration:none;"> I Accept</a> <br /> <!-- <p>Checkout our <a href="">T&C</a></p> --> <b>Thanks (Fly Goldfinch)</b> </td> </tr> </tbody> </table> </div> <div style="text-align: center; font-size: 12px; color: #b2b2b5; margin-top: 20px"> <p> Powered by flygoldfinch.com <br> <a href="javascript: void(0);" style="color: #b2b2b5; text-decoration: underline;">Unsubscribe</a> </p> </div> </div> </div> </body> </html>`;
 				
 				$('#alert_email_sent,#alert_email_failed').addClass('hide');
 
